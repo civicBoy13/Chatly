@@ -47,4 +47,28 @@
   .sub-title{
     color: #4581C7;
   }
+  .overlay{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top:0;
+    left:0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+  .modal-header{
+    height: 60px;
+  }
+  .modal-body{
+    flex: 1;
+  }
+  .modal-footer{
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .modal-footer p{
+    color: #4581C7;
+  }
+
 </style>
