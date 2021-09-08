@@ -6,6 +6,7 @@
   *{
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
   html,body{
     margin: 0;
@@ -75,4 +76,5 @@
     background-color:white;
     overflow: auto;
   }
+  
 </style>

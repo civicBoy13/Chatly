@@ -73,7 +73,7 @@ export default {
         z-index: 2;
     }
     .side-nav-overlay{
-        height: 100%;
+        height: 100vh;
         width: 100%;
         position: absolute;
         top:0;
@@ -83,7 +83,7 @@ export default {
         display: none;
     }
     .side-nav{
-        height: 100%;
+        height: 100vh;
         position: absolute;
         width: 70%;
         top:0;
