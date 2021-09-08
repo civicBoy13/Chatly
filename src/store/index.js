@@ -12,6 +12,14 @@ export default createStore({
     },
     setUserStatus: function(state, value){
       state.currentUser.status = value;
+    },
+    clearState: async function(state){
+      var uid = auth.currentUser.uid;
+      await db.collection('Users').doc(uid).update({
+        status:0
+      });
+      state.currentUser = undefined;
+      state.contacts = [];
     }
   },
   actions: {

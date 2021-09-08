@@ -1,8 +1,8 @@
 <template>
     <div class="app-container">
-        <Drawer />
+        <Drawer ref="drawer"/>
         <div class="app-header">
-            <div class="menu-icon">
+            <div class="menu-icon" @click="openDrawer()">
                 <div class="icon-container">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -37,6 +37,9 @@ export default {
         signOut:function(){
             auth.signOut();
             this.$router.replace('/');
+        },
+        openDrawer:function(){
+            this.$refs.drawer.open();
         }
     },
     created(){

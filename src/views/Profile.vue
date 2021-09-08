@@ -34,6 +34,10 @@
           </div>
         </div>
       </div>
+      <br>
+      <div class="user-options">
+        <h5>My Dashboard</h5>
+      </div>
     </template>
     <Loading  ref="loading"/>
   </div>
@@ -122,8 +126,11 @@ export default {
     flex-direction: column;
     width: 100%;
   }
-   .status-select h5{
+  .status-select h5,
+  .user-options h5{
      padding:10px 20px;
+     color:rgb(204, 204, 204);
+     font-weight: 600;
    }
   .list-status{
     overflow: auto;
@@ -159,4 +166,5 @@ export default {
     height: 100%;
     align-items: center;
   }
+
 </style>
