@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login';
 import CreateAccount from '../views/CreateAccount';
 import MainApp from '../views/MainApp.vue';
+import Contacts from '../views/Contacts.vue';
+import Profile from '../views/Profile.vue'
 import {auth} from  '../extensions/Firebase';
 
 const routes = [
@@ -10,12 +12,15 @@ const routes = [
     name: "Login" ,
     component: Login,
     beforeEnter:(to,from,next)=>{
-      console.log(auth.currentUser);
-      if(auth.currentUser === null || auth.currentUser === undefined){
-        next();
-      }else{
-        next("/Chatly")
-      }
+
+      auth.onAuthStateChanged((user)=>{
+        console.log(user);
+        if(!user){
+          next()
+        }else{
+          next('/Chatly');
+        }
+      });
     }
   },
   {
@@ -28,15 +33,28 @@ const routes = [
     name:'Chatly',
     component: MainApp,
     children:[
-      
+      {
+        path: '',
+        redirect:'/Chatly/Contacts'
+      },{
+        path:'Contacts',
+        name:'Contacts',
+        component: Contacts
+      },
+      {
+        path:'Profile',
+        component: Profile
+      }
     ],
     beforeEnter:(to,from,next)=>{
-      console.log(auth.currentUser);
-      if(auth.currentUser){
-        next();
-      }else{
-        next("/")
-      }
+      auth.onAuthStateChanged((user)=>{
+        if(!user){
+          next("/")
+        }else{
+          next();
+        }
+      });
+
     }
 
   }

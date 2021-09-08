@@ -70,5 +70,9 @@
   .modal-footer p{
     color: #4581C7;
   }
-
+  .app-page{
+    flex:1;
+    background-color:white;
+    overflow: auto;
+  }
 </style>

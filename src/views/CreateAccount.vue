@@ -87,7 +87,8 @@ export default {
                     db.collection("Users").doc(userCredentials.user.uid).set({
                         first_name: fname,
                         last_name:lname,
-                        email:email
+                        email:email,
+                        status:0
                     });
                     this.$refs.loading.hide();
                     await auth.signOut();
