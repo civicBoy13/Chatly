@@ -3,8 +3,10 @@ import Login from '../views/Login';
 import CreateAccount from '../views/CreateAccount';
 import MainApp from '../views/MainApp.vue';
 import Contacts from '../views/Contacts.vue';
-import Profile from '../views/Profile.vue'
+import Profile from '../views/Profile.vue';
+import Notifications from '../views/Notifications.vue';
 import {auth} from  '../extensions/Firebase';
+
 
 const routes = [
   {
@@ -44,6 +46,10 @@ const routes = [
       {
         path:'Profile',
         component: Profile
+      },
+      {
+        path:'Notifications',
+        component: Notifications
       }
     ],
     beforeEnter:(to,from,next)=>{
